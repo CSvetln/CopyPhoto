@@ -1,0 +1,10 @@
+C:\Users\svetl\source\repos\CopyPhoto\CopyPhoto\bin\Debug\CopyPhoto.exe.config
+C:\Users\svetl\source\repos\CopyPhoto\CopyPhoto\bin\Debug\CopyPhoto.exe
+C:\Users\svetl\source\repos\CopyPhoto\CopyPhoto\bin\Debug\CopyPhoto.pdb
+C:\Users\svetl\source\repos\CopyPhoto\CopyPhoto\obj\Debug\CopyPhoto.csproj.AssemblyReference.cache
+C:\Users\svetl\source\repos\CopyPhoto\CopyPhoto\obj\Debug\CopyPhoto.frmCopyPhoto.resources
+C:\Users\svetl\source\repos\CopyPhoto\CopyPhoto\obj\Debug\CopyPhoto.Properties.Resources.resources
+C:\Users\svetl\source\repos\CopyPhoto\CopyPhoto\obj\Debug\CopyPhoto.csproj.GenerateResource.cache
+C:\Users\svetl\source\repos\CopyPhoto\CopyPhoto\obj\Debug\CopyPhoto.csproj.CoreCompileInputs.cache
+C:\Users\svetl\source\repos\CopyPhoto\CopyPhoto\obj\Debug\CopyPhoto.exe
+C:\Users\svetl\source\repos\CopyPhoto\CopyPhoto\obj\Debug\CopyPhoto.pdb
