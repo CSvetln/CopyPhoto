@@ -8,8 +8,8 @@ namespace CopyPhoto
 {
     public interface IAdbService
     {
-        HashSet<FileParam> GetAndroidFilesList(string extension, DateTime? lastDate = null);
-        void CopyAndroidFiles(string file, string destPath);
+        HashSet<FileParam> GetAndroidFilesList(string source, string extension, DateTime? lastDate = null);
+        void CopyAndroidFiles(string source, string file, string destPath);
         string ExecuteAdbCommand(string command);
     }
 }

@@ -112,7 +112,7 @@ namespace CopyPhoto
 
                 HashSet<FileParam> sourceFileset = new HashSet<FileParam>(); //файлы с фотоаппарта или смартфона
                 if (isAndroidFiles) // если стоит галочка копирование со смартфона
-                    sourceFileset = _adbService.GetAndroidFilesList(extension, lastDate); // получить файлы со смартфона
+                    sourceFileset = _adbService.GetAndroidFilesList(source, extension, lastDate); // получить файлы со смартфона
                 else
                     sourceFileset = this.GetSourceFiles(source, extension, lastDate); //получить файлы с фотоаппарата
 
@@ -139,7 +139,7 @@ namespace CopyPhoto
                     var destPath = Path.Combine(folder, currentDate.ToString("yy.MM.dd"), file.FileName);
 
                     if (isAndroidFiles)
-                        _adbService.CopyAndroidFiles(file.FileName, destPath); // копирование файлов с смартфона
+                        _adbService.CopyAndroidFiles(source, file.FileName, destPath); // копирование файлов с смартфона
                     else
                         File.Copy(Path.Combine(source, file.FileName), destPath, false); //копирование файлов с фотоаппарата
                     //File.SetCreationTime(destPath, file.CreationTime);
@@ -159,7 +159,7 @@ namespace CopyPhoto
                 HashSet<FileParam> sourceFileset = new HashSet<FileParam>();
 
                 if (isAndroidFiles)              
-                    sourceFileset = _adbService.GetAndroidFilesList(extension);              
+                    sourceFileset = _adbService.GetAndroidFilesList(source, extension);              
                 else
                     sourceFileset = this.GetSourceFiles(source, extension);
 
@@ -173,13 +173,13 @@ namespace CopyPhoto
                         string destFolder = Path.Combine(folder, file.CreationDate.ToString("yy.MM.dd"));
                         if (currentDate != file.CreationDate)
                             this.EnsureDirectoryExists(destFolder);
-                        DateTime d = DateTime.Parse("12/09/2021");
-                        if (destFolder == "E:\\тест\\21.09.12")
+                       // DateTime d = DateTime.Parse("12/09/2021");
+                        if (destFolder == "E:\\тест\\24.10.18")
                             System.Diagnostics.Debugger.Break();
                         var destFile = Path.Combine(destFolder, file.FileName);
                         
                         if(isAndroidFiles)
-                            _adbService.CopyAndroidFiles(file.FileName, destFolder);
+                            _adbService.CopyAndroidFiles(source, file.FileName, destFolder);
                         else
                             File.Copy(Path.Combine(source, file.FileName), Path.Combine(destFolder, file.FileName), false);
 

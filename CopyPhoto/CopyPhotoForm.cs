@@ -16,6 +16,7 @@ namespace CopyPhoto
         private readonly IFileService _fileService;
         private readonly ILoggerService _loggerService;
 
+
         public frmCopyPhoto()
         {      
             InitializeComponent();
@@ -23,7 +24,7 @@ namespace CopyPhoto
             var adbService = new AdbService(@"C:\platform-tools\adb.exe");
             _fileService = new FileService( adbService, _loggerService);
             btnBrowseSource.Enabled = !chkAndroidCopy.Checked;
-            txtSource.ReadOnly = chkAndroidCopy.Checked;
+           // txtSource.ReadOnly = chkAndroidCopy.Checked;
         }
 
         private void btnBrowseSource_Click(object sender, EventArgs e)
@@ -106,7 +107,10 @@ namespace CopyPhoto
         private void chkAndroidCopy_CheckedChanged(object sender, EventArgs e)
         {
             btnBrowseSource.Enabled = !chkAndroidCopy.Checked;
-            txtSource.ReadOnly = chkAndroidCopy.Checked;
+            //txtSource.ReadOnly = chkAndroidCopy.Checked;
+
+
+            txtSource.Text = "/sdcard/DCIM/Camera/";          
         }
     }
 }

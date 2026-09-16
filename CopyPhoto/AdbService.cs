@@ -17,18 +17,18 @@ namespace CopyPhoto
             _adbPath = adbPath;
         }
 
-        public HashSet<FileParam> GetAndroidFilesList(string extesion, DateTime? lastDate = null)
+        public HashSet<FileParam> GetAndroidFilesList(string source, string extesion, DateTime? lastDate = null)
         {
-            var output = ExecuteAdbCommand("shell ls -l /sdcard/DCIM/Camera/");
+            var output = ExecuteAdbCommand("shell ls -l " + source);
             return ParseFileList(output, extesion, lastDate);
         }
 
-        public void CopyAndroidFiles(string file, string destPath)
+        public void CopyAndroidFiles(string source, string file, string destPath)
         {
             //byte[] originalBytes = Encoding.ASCII.GetBytes(file);
             //byte[] asciiBytes = Encoding.Convert(Encoding.ASCII, Encoding.UTF8, originalBytes);
             string fileASCII = Encoding.UTF8.GetString(Encoding.GetEncoding("windows-1251").GetBytes(file));
-            ExecuteAdbCommand("pull \"/sdcard/DCIM/Camera/" + fileASCII + "\" \"" +  destPath + "\"");
+            ExecuteAdbCommand("pull \"" + source + fileASCII + "\" \"" +  destPath + "\"");
         }
 
         public string ExecuteAdbCommand(string command)
